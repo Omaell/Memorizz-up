@@ -15,12 +15,11 @@
     </head>
 
     <body>
-
-        <h1>MEMORIZZ UP</h1>
-        <p>dddffuuuu</p>
-        <div><?php echo rand(1,10); ?></div>
-        <div class="plateau"></div>
-
+        <div class="memo_wrapper">
+            <div class="memo_title">MEMORIZZ UP</div>
+            <div class="memo_message">Vous souhaitez cueillir assez de fruits pour vous préparer un smoothie méga-multi-fruits ? Pour cela, venez jouez avec moi !</div>
+            <div class="memo_board"></div>
+        </div>
     </body>
 
 </html>

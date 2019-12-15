@@ -13,29 +13,29 @@ class Memo {
     }
 
     enHtml(value, index, array) {
-        this.html = this.html + '<div class="carte ' +value+ '"></div>';
+        this.html = this.html + '<div class="memo_board_card memo_board_card--' +value+ '"></div>';
     }
     
     getCartes() {
        this.cartes = [
-                        'pomme',
-                        'banane',
+                        'apple',
+                        'banana',
                         'orange',
-                        'citronvert',
-                        'grenade',
+                        'greenlemon',
+                        'pomegranate',
                         'abricot',
-                        'citron',
-                        'fraise',
-                        'pommegranny',
-                        'peche',
-                        'raisin',
-                        'pasteque',
-                        'prune',
-                        'poire',
-                        'cerise', 
-                        'framboise', 
-                        'mangue',
-                        'cerisejaune'
+                        'lemon',
+                        'strawberry',
+                        'granny',
+                        'peach',
+                        'grappes',
+                        'watermelon',
+                        'plum',
+                        'pear',
+                        'cherry', 
+                        'raspberry', 
+                        'mango',
+                        'yellowcherry'
                     ];
         return this.cartes.concat(this.cartes);
     }

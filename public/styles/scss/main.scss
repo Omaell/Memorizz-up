@@ -1,0 +1,103 @@
+$memo_violet: #8C116B;
+$memo_green: #97BF06;
+$memo_orange: #F27507;
+$memo_red: #A60303;
+
+@import url('https://fonts.googleapis.com/css?family=Acme|Girassol&display=swap');
+
+
+.memo_wrapper {
+    margin:auto;
+    margin-top: 20px;
+    max-width: 1000px;
+    min-width: 980px;
+}
+
+.memo_title {
+    margin:auto;
+    font-family: 'Girassol', cursive;
+    font-size: 40px;
+    color: $memo_violet;
+    text-align: center;
+}
+
+.memo_message {
+    margin:auto;
+    margin-top: 10px;
+    font-family: 'Acme', sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+
+.memo_board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: $memo_green;
+    margin-top: 30px;
+    padding: 5px;
+    &_card {
+        background-color: $memo_violet;
+        width: 100px;
+        height: 100px;
+        margin: 5px;
+        border-radius: 25px;
+        background: url(/public/images/cards.png);
+        &--apple {
+            background-position: left top;
+        }
+        &--banana {
+            background-position: left 1700px;
+        }
+        &--orange {
+            background-position: left 1600px;
+        }
+        &--greenlemon {
+            background-position: left 1500px;
+        }
+        &--pomegranate {
+            background-position: left 1400px;
+        }
+        &--abricot {
+            background-position: left 1300px;
+        }
+        &--lemon {
+            background-position: left 1200px;
+        }
+        &--strawberry {
+            background-position: left 1100px;
+        }
+        &--granny {
+            background-position: left 1000px;
+        }
+        &--peach {
+            background-position: left 900px;
+        }
+        &--grappes {
+            background-position: left 800px;
+        }
+        &--watermelon {
+            background-position: left 700px;
+        }
+        &--plum {
+            background-position: left 600px;
+        }
+        &--pear {
+            background-position: left 500px;
+        }
+        &--cherry {
+            background-position: left 400px;
+        }
+        &--raspberry {
+            background-position: left 300px;
+        }
+        &--mango {
+            background-position: left 200px;
+        }
+        &--yellowcherry {
+            background-position: left 100px;
+        }
+
+    }
+    
+}

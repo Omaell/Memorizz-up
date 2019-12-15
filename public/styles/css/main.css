@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css?family=Acme|Girassol&display=swap");
+.memo_wrapper {
+  margin: auto;
+  margin-top: 20px;
+  max-width: 1000px;
+  min-width: 980px; }
+
+.memo_title {
+  margin: auto;
+  font-family: 'Girassol', cursive;
+  font-size: 40px;
+  color: #8C116B;
+  text-align: center; }
+
+.memo_message {
+  margin: auto;
+  margin-top: 10px;
+  font-family: 'Acme', sans-serif;
+  font-size: 20px;
+  text-align: center; }
+
+.memo_board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: #97BF06;
+  margin-top: 30px;
+  padding: 5px; }
+  .memo_board_card {
+    background-color: #8C116B;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    border-radius: 25px;
+    background: url(/public/images/cards.png); }
+    .memo_board_card--apple {
+      background-position: left top; }
+    .memo_board_card--banana {
+      background-position: left 1700px; }
+    .memo_board_card--orange {
+      background-position: left 1600px; }
+    .memo_board_card--greenlemon {
+      background-position: left 1500px; }
+    .memo_board_card--pomegranate {
+      background-position: left 1400px; }
+    .memo_board_card--abricot {
+      background-position: left 1300px; }
+    .memo_board_card--lemon {
+      background-position: left 1200px; }
+    .memo_board_card--strawberry {
+      background-position: left 1100px; }
+    .memo_board_card--granny {
+      background-position: left 1000px; }
+    .memo_board_card--peach {
+      background-position: left 900px; }
+    .memo_board_card--grappes {
+      background-position: left 800px; }
+    .memo_board_card--watermelon {
+      background-position: left 700px; }
+    .memo_board_card--plum {
+      background-position: left 600px; }
+    .memo_board_card--pear {
+      background-position: left 500px; }
+    .memo_board_card--cherry {
+      background-position: left 400px; }
+    .memo_board_card--raspberry {
+      background-position: left 300px; }
+    .memo_board_card--mango {
+      background-position: left 200px; }
+    .memo_board_card--yellowcherry {
+      background-position: left 100px; }
+
+/*# sourceMappingURL=main.css.map */
