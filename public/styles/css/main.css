@@ -2,8 +2,8 @@
 .memo_wrapper {
   margin: auto;
   margin-top: 20px;
-  max-width: 1000px;
-  min-width: 980px; }
+  max-width: 1020px;
+  min-width: 750px; }
 
 .memo_title {
   margin: auto;
@@ -27,12 +27,19 @@
   margin-top: 30px;
   padding: 5px; }
   .memo_board_card {
-    background-color: #8C116B;
     width: 100px;
     height: 100px;
     margin: 5px;
     border-radius: 25px;
-    background: url(/public/images/cards.png); }
+    background-image: url(/public/images/cards.png); }
+    .memo_board_card:hover {
+      box-shadow: 0 0 6px #590B44;
+      background-color: #D95BB7;
+      cursor: pointer; }
+    .memo_board_card--faceDown {
+      background-image: none;
+      background-color: #8C116B;
+      box-shadow: 0 0 2px #8C116B; }
     .memo_board_card--apple {
       background-position: left top; }
     .memo_board_card--banana {

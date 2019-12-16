@@ -1,4 +1,6 @@
 $memo_violet: #8C116B;
+$memo_dark_violet: #590B44;
+$memo_purple: #D95BB7;
 $memo_green: #97BF06;
 $memo_orange: #F27507;
 $memo_red: #A60303;
@@ -9,8 +11,8 @@ $memo_red: #A60303;
 .memo_wrapper {
     margin:auto;
     margin-top: 20px;
-    max-width: 1000px;
-    min-width: 980px;
+    max-width: 1020px;
+    min-width: 750px;
 }
 
 .memo_title {
@@ -37,12 +39,21 @@ $memo_red: #A60303;
     margin-top: 30px;
     padding: 5px;
     &_card {
-        background-color: $memo_violet;
         width: 100px;
         height: 100px;
         margin: 5px;
         border-radius: 25px;
-        background: url(/public/images/cards.png);
+        background-image: url(/public/images/cards.png);
+        &:hover {
+            box-shadow: 0 0 6px  $memo_dark_violet;
+            background-color: $memo_purple;
+            cursor: pointer;
+        }
+        &--faceDown {
+            background-image: none;
+            background-color: $memo_violet;
+            box-shadow: 0 0 2px $memo_violet;
+        }
         &--apple {
             background-position: left top;
         }
