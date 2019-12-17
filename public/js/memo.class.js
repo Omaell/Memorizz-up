@@ -1,6 +1,5 @@
 class Memo {
 
-
     constructor() 
     {
         this.d = new Date();
@@ -21,6 +20,7 @@ class Memo {
     {
         // set endTimestamp with the current timestamp in milliseconds
         this.endTimestamp = this.d.getTime();
+        console.log('le score : ' + this.getScore());
     }
 
     isMemoStarted() 

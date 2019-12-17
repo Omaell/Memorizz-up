@@ -7,6 +7,9 @@ $memo_red: #A60303;
 
 @import url('https://fonts.googleapis.com/css?family=Acme|Girassol&display=swap');
 
+body {
+    background-color: white;
+}
 
 .memo_wrapper {
     margin:auto;
@@ -31,13 +34,36 @@ $memo_red: #A60303;
     text-align: center;
 }
 
-.memo_board {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    background-color: $memo_green;
+.memo_timer {
+    width: 1000px;
+    height: 10px;
+    margin: auto;
     margin-top: 30px;
+    background-color: white;
+    &_left {
+        position: relative;
+        float:left;
+        height: 100%;
+        background-color: $memo_green;
+    }
+    &_past {
+        position: relative;
+        float:left;
+        height: 100%;
+        background-color: $memo_red;
+    }  
+}
+
+.memo_board {
+    
+    background-color: $memo_green;
+    margin-top: 10px;
     padding: 5px;
+    &_playground {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
     &_card {
         width: 100px;
         height: 100px;
@@ -109,6 +135,20 @@ $memo_red: #A60303;
             background-position: left 100px;
         }
 
+    }
+    &_final {
+        position: relative;
+        margin: auto;
+        display: none;
+        text-align: center;
+        font-size: 20px;
+        font-family: 'Acme', sans-serif;
+        &_winner {
+            color: $memo_violet;
+        }
+        &_looser {
+            color: $memo_red;
+        }
     }
     
 }
