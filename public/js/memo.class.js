@@ -2,7 +2,7 @@ class Memo {
 
     constructor() 
     {
-        this.d = new Date();
+        this.d = null;
         this.html = '';
         this.cards = [];
         this.startTimestamp = 0;
@@ -14,11 +14,13 @@ class Memo {
     memoStart() 
     {
         // set startTimestamp with the current timestamp in milliseconds
+        this.d = new Date();
         this.startTimestamp = this.d.getTime();
     }
     memoStop() 
     {
         // set endTimestamp with the current timestamp in milliseconds
+        this.d = new Date();
         this.endTimestamp = this.d.getTime();
         console.log('le score : ' + this.getScore());
     }

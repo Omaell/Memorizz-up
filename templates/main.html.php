@@ -10,8 +10,8 @@
             src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
             crossorigin="anonymous"></script>
-        <script src="/public/js/memo.class.js?refresh=<?=rand(1,100)?>"></script>
-        <script src="/public/js/main.js?refresh=<?=rand(1,100)?>"></script>
+        <script src="/public/js/memo.class.js"></script>
+        <script src="/public/js/main.js"></script>
     </head>
 
     <body>
@@ -25,8 +25,7 @@
             <div class="memo_board">
                 <div class="memo_board_playground"></div>
                 <div class="memo_board_final memo_board_final_winner">
-                   
-                    <p>Ok, t\'as gagné ton smoothie... Par contre, on n'a plus de verre !</p>
+                    <p>Ok, t'as gagné ton smoothie... Par contre, on n'a plus de verre !</p>
                 </div>
                 <div class="memo_board_final memo_board_final_looser">
                     <p>Perdu ! Pas de smoothie pour cette fois.</p>

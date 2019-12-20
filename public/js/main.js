@@ -1,24 +1,29 @@
 
 var maxDuration = 60000; // temps maximum en millisecondes
 var interval = 10; // nombres d'intervales pour l'animation de la barre
-var timeoutVar = 0;
+var timeoutVar = null;
+var win = false;
 
 function startTimeBarAnimation(maxDuration, interval) {
     intervalDelay = maxDuration  / interval; //durée en millisecondes
     setTimeBar();
-    timevar = window.setInterval(changeTimeBar, intervalDelay);
+    timeoutVar = window.setInterval(changeTimeBar, intervalDelay);
     window.setTimeout(looserAnimation, maxDuration);
 }
 
 function looserAnimation() {
-    console.log('Partie perdue');
-    $('.memo_board_playground').empty();
-    $('.memo_board_final_looser').show();
+    if (win === false) {
+        console.log('Partie perdue');
+        $('.memo_board_playground').empty();
+        getBestScores('memo_board_final_looser');
+        $('.memo_board_final_looser').show();
+    }
 }
 
 function winnerAnimation() {
     console.log('Partie gagnée');
     $('.memo_board_playground').empty();
+    getBestScores('memo_board_final_winner');
     $('.memo_board_final_winner').show();
 }
 
@@ -37,8 +42,27 @@ function changeTimeBar() {
     }
 }
 
+function getBestScores(blockName) {
+    $.ajax({
+        method: "POST",
+        url: "index.php",
+        data: { listScores: 10}
+          })
+        .done(function( datas ) {
+            datas = JSON.parse(datas);
+            $('.' +blockName).append('<p>Les meilleurs temps en millisecondes : </p>');
+            $.each(datas, function(index, value) {
+                $('.' +blockName).append('<p>#' + (index+1) + ': ' + value +' ms </p>');
+            });
+            
+        })
+        .fail(function( jqXHR, textStatus ) {
+            console.log( "Request failed: " + textStatus );
+        });
+
+}
+
 $( document ).ready(function() {
-    console.log( "ready!" );
 
     //init
     memo = new Memo();
@@ -83,9 +107,22 @@ $( document ).ready(function() {
 
         // On vérifie que le jeu n'est pas encore terminé
         if ( $('.memo_board_card--faceDown').length === 0){
-            memo.memoEnd();
-            window.clearInterval(timeoutVar);
-            winnerAnimation(); 
+            // Si le joueur a réussi à terminer le memory, on lance les fonctions qui permettent de...
+            memo.memoStop(); // arreter le chronomètre
+            window.clearInterval(timeoutVar); // arreter le chronomètre
+            win = true; // on met la variable globale win à true pour les autres fonctions
+            $.ajax({ // on enregistre le temps du chrono
+                method: "POST",
+                url: "index.php",
+                data: { addScore: (memo.getScore()) }
+              })
+                .done(function( msg ) {
+                  console.log(msg);
+                })
+                .fail(function( jqXHR, textStatus ) {
+                    alert( "Request failed: " + textStatus );
+                });
+            winnerAnimation(); // on lance l'animation du gagnant
             console.log('le jeu se termine');
         }
 

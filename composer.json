@@ -1,0 +1,12 @@
+{
+    "name": "root/memorizz-up",
+    "description": "Memory game for brains",
+    "type": "project",
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.1"
+    },
+    "autoload": {
+        "psr-4": {"Memo\\": "app/"}
+    }
+}
