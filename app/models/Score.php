@@ -3,6 +3,15 @@ namespace Memo\models;
 
 // On laisse la classe parente gérer la connexion à la base de données
 // Ici ne seront définies que les méthodes utiles pour se souvenirs des scores 
+
+/**
+ * Nom de la base de données : memorizzup
+ * La table utilisée : score
+ * Les champs de la table "score" :
+ *  - id, clé primaire, auto-incrément
+ *  - score, entier
+ *  - created, datetime
+ */
 class Score extends Bdd
 {
     private $connexion;
@@ -20,6 +29,8 @@ class Score extends Bdd
         return $result;
     }
 
+    // Cette méthode permet de lister les meilleurs scores
+    // On peut envisager de renvoyer aussi le jour et l'heure de cet enregistrement puisque ils sont aussi stockés
     public function select($limit = '0,10', $order = 'ASC')
     {
         $query = 'SELECT score FROM score';
