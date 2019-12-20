@@ -1,6 +1,8 @@
 <?php
 namespace Memo\models;
 
+// On laisse la classe parente gérer la connexion à la base de données
+// Ici ne seront définies que les méthodes utiles pour se souvenirs des scores 
 class Score extends Bdd
 {
     private $connexion;

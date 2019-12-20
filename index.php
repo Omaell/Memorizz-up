@@ -35,10 +35,11 @@ require('conf.php');
  */
 require(__DIR__ . '/vendor/autoload.php');
 
+/**
+ * Partie qui permettra de répondre aux appels AJAX faits par le jeu
+ */
 if (isset($_POST) && count($_POST) > 0) {
-    /**
-     * 
-     */
+    
     if (isset($_POST['addScore'])) {
         Memo\controllers\Main::addScore($_POST['addScore']);die;
     }
